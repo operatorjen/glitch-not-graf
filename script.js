@@ -13,12 +13,12 @@ let count = 0
 
 function render() {
  // ctx.clearRect(0, 0, canvas.width, canvas.height)
-  ctx.beginPath()
+//  ctx.beginPath()
  // ctx.moveTo(x, y)
-  ctx.lineWidth = 10
-  ctx.fillStyle = `rgba(${Math.random() * 200 - 10}, ${Math.random() * 120 - 10}, ${Math.random() * 200 - 50}, 0.01)`
+  ctx.lineWidth = 1
+  ctx.fillStyle = `rgba(${Math.random() * 100 - 10}, ${Math.random() * 120 - 10}, ${Math.random() * 200 - 50}, 0.01)`
   ctx.strokeStyle = 'rgba(255, 255, 255, 0.9)'
-  ctx.closePath()
+ // ctx.closePath()
 
 /*  
   if (count % 100 === 0) {
@@ -58,7 +58,7 @@ function render() {
     switchY = !switchY 
   }
   
-  ctx.lineTo(x, y, x * Math.random() + x * 5, y * Math.random() + y * 5)
+  ctx.lineTo(x, y, x * Math.random() + x * 6, y * Math.random() + y * 5)
   ctx.fill()
   ctx.stroke()
   window.requestAnimationFrame(render)
