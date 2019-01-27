@@ -12,10 +12,10 @@ let switchCount = false
 let count = 0
 
 function render() {
-  //ctx.clearRect(0, 0, canvas.width, canvas.height)
+  ctx.clearRect(0, 0, canvas.width, canvas.height)
  //  ctx.beginPath()
-  ctx.fillStyle = `rgba(${Math.random() * 200}, 110, 200, 0.05)`
-  ctx.strokeStyle = 'rgba(1, 1, 1, 0.1)'
+  ctx.fillStyle = `rgba(${Math.random() * 20}, 190, 210, 0.6)`
+  ctx.strokeStyle = 'rgba(1, 1, 1, 0.3)'
   //ctx.closePath()
 
 /*  
@@ -33,7 +33,7 @@ function render() {
     }
   }
   */
-    if (count < 0 || count > 100) {
+    if (count < 0 || count > 210) {
       //switchCount = !switchCount
       x = ctx.width / 2
       y = ctx.height / 2
@@ -45,8 +45,8 @@ function render() {
       count++  
     }
   
-    x = x + Math.sin(count * Math.random()) * count
-    y = y + Math.cos(count * Math.random()) * count
+    x = x + Math.sin(count * Math.random()) * 10
+    y = y + Math.cos(count * Math.random()) * 10
   
  /* 
   if (x < 0 || x > ctx.width) {
@@ -57,7 +57,7 @@ function render() {
     switchY = !switchY 
   }
   */
-  ctx.arc(x, y, 4, 0, 2 * Math.PI)
+  ctx.lineTo(x, y, x * Math.random() + x * 10, y * Math.random() + y * 10)
   ctx.fill()
   ctx.stroke()
   window.requestAnimationFrame(render)
