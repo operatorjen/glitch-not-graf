@@ -12,11 +12,13 @@ let switchCount = false
 let count = 0
 
 function render() {
-  ctx.clearRect(0, 0, canvas.width, canvas.height)
- //  ctx.beginPath()
-  ctx.fillStyle = `rgba(${Math.random() * 20}, 190, 210, 0.6)`
-  ctx.strokeStyle = 'rgba(1, 1, 1, 0.3)'
-  //ctx.closePath()
+ // ctx.clearRect(0, 0, canvas.width, canvas.height)
+  ctx.beginPath()
+ // ctx.moveTo(x, y)
+  ctx.lineWidth = 10
+  ctx.fillStyle = `rgba(${Math.random() * 200 - 10}, ${Math.random() * 120 - 10}, ${Math.random() * 200 - 50}, 0.01)`
+  ctx.strokeStyle = 'rgba(255, 255, 255, 0.9)'
+  ctx.closePath()
 
 /*  
   if (count % 100 === 0) {
@@ -33,8 +35,8 @@ function render() {
     }
   }
   */
-    if (count < 0 || count > 210) {
-      //switchCount = !switchCount
+    if (count < 0 || count > 200) {
+      switchCount = !switchCount
       x = ctx.width / 2
       y = ctx.height / 2
     }
@@ -45,10 +47,9 @@ function render() {
       count++  
     }
   
-    x = x + Math.sin(count * Math.random()) * 10
-    y = y + Math.cos(count * Math.random()) * 10
+    x = x + Math.sin(count * Math.random()) * 40
+    y = y + Math.cos(count * Math.random()) * 40
   
- /* 
   if (x < 0 || x > ctx.width) {
     switchX = !switchX  
   }
@@ -56,8 +57,8 @@ function render() {
   if (y < 0 || y > ctx.height) {
     switchY = !switchY 
   }
-  */
-  ctx.lineTo(x, y, x * Math.random() + x * 10, y * Math.random() + y * 10)
+  
+  ctx.lineTo(x, y, x * Math.random() + x * 5, y * Math.random() + y * 5)
   ctx.fill()
   ctx.stroke()
   window.requestAnimationFrame(render)
